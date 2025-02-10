@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <form method="get" action="/BankForYou/Home">
+        <button class="back_btn"><img src="arrow-left-long-solid.svg" height="30px" width="40px"></button>
+    </form>
+    <h1 class="bal_head">Transactions</h1>
+    <p style="font-size: 33px;top:5px;left:60px;position: absolute;padding-bottom: 20px;font-family:Georgia, 'Times New Roman', Times, serif;color:white;"><i>BankForU</i></p>
+            
+    <div class="mode"><img src="cloud-moon-solid.svg" height="30px" width="30px"></div>
+    <div class="trans_body">
+        <div class="trans_search">
+            <form method="post" action="/BankForYou/Transactionsacc_no">
+              <b>ACCOUNT NO. &nbsp;&nbsp; : </b>&nbsp;&nbsp;  <input type="text" name="acc_no"> &nbsp;&nbsp;<button>submit</button>
+            </form> <br><p>(Or)</p><br>
+            <form method="post" action="/BankForYou/Transactionsdate">
+                <b class="date">Date &nbsp;&nbsp;: </b>&nbsp;&nbsp;&nbsp;&nbsp;<input  type="date" name="date"> &nbsp;&nbsp; <button>submit</button>
+            </form>
+        </div>
+        <div class="trans_table">
+            <table>
+                <tr style="background-color:blue ;color:white">
+                    <td width="100px">Date</td>
+                    <td width="160px">Account No.</td>
+                    <td width="230px">Acc. Holder Name</td>
+                    <td width="85px">Type</td>
+                    <td width="190px">Amount(in Rs.)</td>
+                </tr>
+                
+                    <% if(val!=[]){%>
+                        <%for(let v of val){%>
+                            <tr style="background-color: rgb(193, 193, 243);color:black;"></tr>
+                                <td><%=v.date%></td>
+                                <td><%=v.acc_no%></td>
+                                <td><%=v.acc_name%></td>
+                                <td><%=v.type%></td>
+                                <td><%=v.amount%></td>
+                            </tr>
+                        <%}%>
+                    <%}%>
+                
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        let bal_head=document.querySelector(".bal_head");
+        mode.addEventListener("click",()=>{
+            if(count%2==0){
+               bal_head.style.color="black";
+            }
+            else{
+              bal_head.style.color="white";
+          }
+        });
+    </script>
+</body>
+</html>

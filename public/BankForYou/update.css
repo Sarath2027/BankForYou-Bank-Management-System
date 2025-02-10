@@ -1,0 +1,97 @@
+.create_out{
+    width:90%;
+    margin-left: 70px;
+    display: flex;
+    font-size: 19px;
+    flex-direction: column;
+    border-radius: 40px;
+    background-color: rgb(197, 214, 208);
+}
+h1{
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color:blue;
+    font-family: 'Courier New', Courier, monospace;
+}
+.create_1,.create_2,.create_3{
+    border:1px solid black;
+    padding: 30px;
+}
+input,textarea{
+    border:1px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    height:3.7vh;
+    width:40vh;
+    font-weight: 500;
+}
+textarea{
+    height: 20vh;
+    font-weight: lighter;
+    font-family:'Times New Roman', Times, serif;
+}
+button{
+    height:4.3vh;
+    width:12vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+}
+.create_1 table tr td input {
+    width:30vh;
+    font-size: 15px;
+}
+.create_1 table tr td{
+    padding-bottom: 35px;
+    padding-left:15px;
+    text-align: left;
+}
+.r3 td input{
+    width:35vh;
+}
+.create_2 table tr td{
+    font-size:22px;
+    padding-right: 150px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.create_3{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+.button{
+    height:3vh;
+    width:32vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+}
+.x table tr td{
+    font-size: 22px;font-weight:800;
+}
+.final_apply{
+    height:5vh;
+    width:32vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+    margin-top: 30px;
+    text-align: center;
+}
+.final_div{
+    display: flex;justify-content: center;
+    
+}
+.cancel{
+    top:30px;
+    left:30px;
+    position: absolute;
+}

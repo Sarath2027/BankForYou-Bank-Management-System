@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <p style="font-size: 33px;top:80px;left:210px;position: absolute;padding-bottom: 20px;font-family:Georgia, 'Times New Roman', Times, serif;color:blue;"><i>BankForU</i></p>
+     <form action="/BankForYou/Accountant/LoanInitiation" method="post">
+        <div class="loan_outer">
+            <div class="loan_i">
+                <h1>Loan Initiation</h1>
+            <table>
+                <tr>
+                    <td>Account Number</td>
+                    <td>: <%=acc_no%></td><input type="text" name="acc_no" value="<%=acc_no%>" style="display: none;">
+                </tr>
+                <tr>
+                    <td>Account Holder Name</td>
+                    <td>: <%=acc_name%></td><input type="text" name="acc_name" value="<%=acc_name%>" style="display: none;">
+                </tr>
+                <tr>
+                    <td>Occupation</td>
+                    <td>: <input type="text" name="occupation" value="Farmer"></td>
+                </tr>
+                <tr>
+                    <td>Purpose of Loan</td>
+                    <td>: <input type="text" name="purpose" value="Loss in agriculture"></td>
+                </tr>
+                <tr>
+                    <td>Amount</td>
+                    <td>: <input type="text" name="amount" value="120000"></td>
+                </tr>
+                <tr>
+                    <td>Interest Return Type</td>
+                    <td>: <select name="return_type">
+                        <option value="monthly">Monthly</option>
+                        <option value="yearly">Yearly</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><button class="initiate_btn">Initiate</button></td>
+                </tr>
+            </table>
+            </div> 
+        </div>
+     </form>
+</body>
+</html>

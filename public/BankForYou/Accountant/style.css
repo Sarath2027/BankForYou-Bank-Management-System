@@ -1,0 +1,453 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+body{
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0px;
+}
+.body{
+    display: flex;
+    justify-content: center;
+}
+header{
+    background-color: rgb(58, 58, 204);
+    color:white;
+    height:70px;
+    padding: 4px;
+    padding-right:20px ;
+    padding-top:3px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.mode{
+    top:30px;right:20px;position: absolute;
+    color: white;
+}
+.right_text{
+    margin-left: 10px;
+    color:white;
+    font-size:60px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    /* animation: rotate_text 2s linear infinite ; */
+}
+@keyframes rotate_text {
+    0%{transform: rotate(3deg);}
+    25%{transform: rotate(0deg);}
+    50%{transform: rotate(-3deg);}
+    75%{transform: rotate(0deg);}
+    100%{transform: rotate(3deg);}
+}
+.navbar{
+    display: flex;
+    justify-content: center;
+    
+} 
+.elements{
+    /* position:absolute; */
+    margin:10px;
+    padding: 5px;
+    height:auto;
+    width:207vh;
+    border:1px solid rgb(192, 190, 190);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 30px;
+}
+.navele{padding:10px;}
+.navele:hover{
+    background-color: rgb(168, 168, 233);
+    padding:10px;
+    border-bottom: 3px solid rgb(10, 6, 248);
+    transition:background-color 10000ms ease-in 1000ms;
+    transition:border-bottom 100ms ease-in 100ms;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+    color:black;
+}
+/* home */
+
+.home_image{
+    content: "";
+    background-image: url('background_img.jpeg');
+    padding-top: 10px;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px;
+    width:250vh;
+    font-size: 100px;
+    z-index:-1;
+}
+.home_image2{
+    display: flex;
+    background-color: rgba(255,255,255,0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.vertical_scroll{
+    position:absolute;
+    right:10px;
+    height:50vh;
+
+    padding-top:15px;
+    background-color: white;
+    width:300px;
+     overflow: scroll; 
+     border:1px solid black;
+}
+marquee{
+    font-size:15px;
+}
+.scroll_items{
+    padding-left: 1vh;
+}
+.scroll_item{
+    padding:2px;
+    padding-bottom:7px;
+    border-bottom: 1px solid gray;
+    animation:fontforscroll 1000ms linear infinite; 
+}
+@keyframes fontforscroll {
+    0%{color:red;}
+    24%{color:blue;}
+    25%{color:red;}
+    49%{color:blue;}
+    50%{color:red;}
+    74%{color:blue;}
+    75%{color:red;}
+    99%{color:blue;}
+}
+
+.bg_title{
+    margin-top:250px;
+    height:100px;
+    overflow: hidden;
+    animation: typewriter 2s steps(26) 0s;
+}
+.quote{
+    font-size: 30px;
+    overflow: hidden;
+    height:33px;
+    margin:20px ;
+    width: 0%;
+    animation: typewriter 3s steps(80) 2s infinite;
+}
+@keyframes typewriter {
+    from{
+        width:0%;
+    }
+    to{
+        width:100%;
+    }
+}
+
+@keyframes pop {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* Balance */
+.bal_head{
+    font-size:39px;
+    text-align: center;
+    background-color: rgb(58, 58, 204);
+     color:white; 
+    padding:9px;
+    margin:0px
+}
+.back_btn{
+    background-color: transparent;
+    color:white;
+    position: absolute;
+    font-size:20px;
+    margin:0px;
+    font-weight: 900;
+    border:0px;
+    left:20px;
+    top:5px;
+    width:auto;
+}
+.balance{
+    font-size: 20px;
+    display: flex;
+    width:100%;
+    height:85vh;
+    border-bottom:1px solid gray;
+}
+.hide{
+    display: none; 
+}
+.bal_one{
+    width:15%;
+    font-size: 15px;
+    border-right:1px solid gray;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding:15px;
+    padding-top: 35px;
+    background-color: rgb(204, 198, 198);
+   
+    font-weight: 550;
+}
+.bal_two{
+    width:85%;
+    height:100%;
+    padding-left:50px ;
+    margin-top: 50px;
+}
+.bal_form{
+    display: flex;
+    margin-top: 20px;
+}
+.bal_form p{
+    padding-right: 40px;
+    margin-top: 0px;
+}
+input,textarea{
+    border:1px solid black;
+    border-radius: 4px;
+    font-size: 20px;
+    height:3.7vh;
+    width:30vh;
+    font-weight: 500;
+}
+textarea{
+    height: 15vh;
+}
+button{
+    height:4.3vh;
+    width:12vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+}
+table{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Accountant */
+.acc_head{
+    background-color: rgb(58, 58, 204);
+    height:75px;
+}
+.acc_out_body{
+    font-size: 20px;
+    display: flex;
+    border-bottom:1px solid gray;
+    width:100%;
+    height:220vh;
+}
+.acc_options{
+    font-size: 15px;
+    border-right: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding: 15px;
+    width:12%;
+}
+.acc_options div ul{
+    margin-top:10px;
+    margin-bottom: 0px;
+    padding-left:30px;
+    
+}
+li{
+    padding-bottom:10px;
+}
+
+.btn{
+    padding:3px;
+    border-radius: 3px;
+}
+.acc_body{
+    width:85%;
+    display:flex;
+    justify-content: center;
+}
+.acc_sub div{
+    padding: 15px;
+    text-align: center;
+}
+.acc_body_head{
+    margin-top: 50px;
+    font-size: 30px;
+}
+.mar{
+    background-color: blue;
+    width: 85%;
+    color:white;
+    top:100px;
+    right:0px;
+    font-size: 25px;
+    left:210px;
+    position:absolute;
+    animation: color_change 2s infinite linear;
+}
+@keyframes color_change {
+    0%{color:white;}
+    20%{color:red;}
+    40%{color:white;}
+    60%{color:red;}
+    80%{color:white;}
+    100%{color:red;}
+}
+.trans_search,.trans_table{
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.trans_table table tr td{
+    padding: 10px;
+}
+.complaint_head{
+    background-color: rgb(58, 58, 204);
+    color:white;
+    text-align: center;
+    width:100%;
+    font-size: 40px;
+    height:60px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+.complaint_details form table tr td textarea,input{
+    width:44vh;
+    font-size: 18px;
+    padding: 3px;
+}
+.complaint_details form table tr td{
+    padding: 14px;
+    font-size: 20px;
+    padding-left: 80px;
+}
+.complaint_details{
+    display: flex;
+    justify-content: center;
+    padding-top: 38px;
+}
+.manager_head{
+    color:white;
+    height: 75px;
+    width:100%;
+    background-color: rgb(58, 58, 204);
+    display: flex;
+    justify-content: center;
+}
+.manager_title{
+    font-size: 50px;
+}
+/* Accountant/Create account*/
+.create_out{
+    width:100%;
+    display: flex;
+    font-size: 19px;
+    flex-direction: column;
+}
+.create_1,.create_2,.create_3{
+    border:1px solid black;
+}
+.create_1 table tr td input {
+    width:30vh;
+    font-size: 15px;
+}
+.create_1 table tr td{
+    padding-bottom: 35px;
+    padding-left:15px;
+    text-align: left;
+}
+.r3 td input{
+    width:35vh;
+}
+.create_2 table tr td{
+    font-size:22px;
+    padding-right: 150px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+.create_3{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+.button{
+    height:3vh;
+    width:32vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+}
+.x table tr td{
+    font-size: 22px;font-weight:800;
+}
+.final_apply{
+    height:5vh;
+    width:32vh;
+    border:0px;
+    border-radius: 8px;
+    background-color: rgb(22, 22, 100);
+    color:white;
+    font-weight:600;
+    margin-top: 30px;
+}
+.loan_outer{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.loan_i{
+    font-size: 20px;
+    border:1px solid black;
+    margin-top:70px ;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    width:70%;
+}
+.loan_i h1{
+    margin:20px 0px 20px 0px;
+}
+.loan_i table tr td input,select{
+    font-size: 15px;
+    width:30vh;
+    height:20px;
+}
+.loan_i table tr td select{height:30px;width:31vh;}
+.loan_i table tr td{
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+}
+.initiate_btn{
+    margin-top:20px ;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 550;
+    width:auto;
+    font-size: 16px;
+    height: auto;
+}

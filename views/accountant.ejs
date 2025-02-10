@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <div class="acc_head">
+        <div class="mode"><img src="cloud-moon-solid.svg" height="30px" width="30px"></div>
+        <form method="get" action="/BankForYou/Home">
+            <button class="back_btn"><img src="arrow-left-long-solid.svg" height="30px" width="30px"></button>
+        </form>
+        <h1 style="text-align: center;margin-top: 25px;">Accountant</h1>
+    </div>
+    <div>
+
+    </div>
+    <div class="acc_out_body">
+        <div class="acc_options">
+            <div>
+                <p  class="transactions_btn btn">Transactions</p>
+                <ul type="none" class=" acc_drop hide">
+                    <li class="btn debit_btn">Debit</li>
+                    <li class="btn credit_btn">Credit</li>
+                </ul>
+            </div>
+            <div class="btn acc_statement_btn">Account Statement</div>
+            <div class="btn create_acc_btn">Create Account</div>
+            <div class="btn loan_btn">Loan Initiation</div>
+        </div>
+        <div class="acc_body">
+            <p style="font-size: 33px;top:5px;left:60px;position: absolute;padding-bottom: 20px;font-family:Georgia, 'Times New Roman', Times, serif;color:white;"><i>BankForU</i></p>
+            <marquee class="hide mar">Check at manager for account No.</marquee>     
+            <div class="debit acc_sub hide">
+                <div class="acc_body_head">Debit</div>
+                <div>
+                    <form method="post" action="/BankForYou/Accountant/Debit">
+                        A/C No. : <input type="text" name="acc_no" placeholder="Account Number"/> &nbsp;&nbsp;
+                        <button class="check">Check</button>       
+                    </form>
+                </div>
+            </div>
+            <div class="credit acc_sub hide">
+                <div class="acc_body_head">Credit</div>
+                <div>
+                    <form method="post" action="/BankForYou/Accountant/Credit">
+                        A/C No. : <input type="text" name="acc_no" placeholder="Account Number"> &nbsp;&nbsp;
+                        <button class="check">Check</button>       
+                    </form>
+                </div>
+            </div>
+            <div class="acc_statement acc_sub hide">
+                <div class="acc_body_head">Account Statement</div>
+
+                <div>
+                    <form method="post" action="/BankForYou/Accountant/Account_statement">
+                        A/C No. : <input type="text" name="acc_no" placeholder="Account Number"> &nbsp;&nbsp;<button class="check">Check</button>       
+                    </form>
+                </div>
+            </div>
+            <div class="create_acc acc_sub hide">
+                
+                <div class="acc_body_head">Create Account</div>
+                
+                <form method="post" action="/BankForYou/Accountant/new" enctype="multipart/form-data">
+                    <div class="create_out">
+                        <div class="create_1">
+                            <table>
+                                <tr class="r1">
+                                    <td>First Name </td><td><input type="text" name="f_name" required></td>
+                                    <td>Middle Name <td><input type="text" name="m_name"></td>
+                                    <td>Last Name </td><td><input type="text" name="l_name"required></td>
+                                    </tr>
+                                <tr class="r1">
+                                    <td> S/o,D/o/W/o</td><td> <input type="text" name="sdw" required></td>
+                                    <td>Aadhar No.</td><td> <input type="text" name="aadhar" required></td>
+                                    <td>DOB </td><td><input type="date" name="dob" required></td>
+                                </tr>
+                                <tr class="r3">
+                                    <td>Phone No. </td><td colspan="2"><input type="text" name="phone" style="width: 45vh;" required></td>
+                                    <td >Email </td><td colspan="2"><input type="text" name="email" style="width: 45vh;" required></td></td>
+                                </tr>
+                                <tr class="r1">
+                                    <td>Nominee Name</td><td colspan="2"><input type="text" name="nominee_name" style="width: 45vh;" required></td>
+                                    <td >Nominee Phone No.</td><td colspan="2"><input type="text" name="nominee_ph" style="width: 45vh;" required></td></td>
+                
+                                </tr>
+                                <tr class="r4">
+                                    <td>Address</td> <td colspan="3"><textarea name="address" rows="3" cols="20" style="width:50vh;height: 40px;" required></textarea></td>
+                                    </tr>
+                                <tr>
+                                    <td>Photo</td><td><input type="file" name="image" required /></td>
+                                </tr>
+                            </table>
+                            </div>
+                        <div class="create_2">
+                            <table>
+                                <tr>
+                                    <td>Branch ID</td><td>: &nbsp;&nbsp;<input type="text" name="b_id" value="BFY001"></td>
+                                </tr>
+                                <tr>
+                                    <td>Branch Name</td><td>: &nbsp;&nbsp;Ongole</td>
+                                </tr>
+                                <tr>
+                                    <td>Branch Phone No. </td><td>: &nbsp;&nbsp;7873848938</td>
+                                </tr>
+                                <tr>
+                                    <td>Branch Email</td><td>: &nbsp;&nbsp;bank001@bfy.co.in</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div><button class="final_apply">Click To Apply</button></div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="loan acc_sub hide">
+                <div class="acc_body_head" >Loan Initiation</div>
+                <div>
+                    <form method="post" action="/BankForYou/Accountant/Loan">
+                        A/C No. : <input type="text" name="acc_no" placeholder="Account Number"> &nbsp;&nbsp;<button class="check">Check</button>       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="accountant.js"></script>
+</body>
+</html>

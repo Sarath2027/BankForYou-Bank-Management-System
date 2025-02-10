@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body{ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+    </style>
+</head>
+<body>
+    <form method="get" action="/BankForYou/Home">
+        <button class="back_btn"><img src="arrow-left-long-solid.svg" height="30px" width="30px"></button>
+    </form>
+    <h1 class="bal_head">Balance Enquiry</h1>
+    <div class="mode"><img src="cloud-moon-solid.svg" height="30px" width="30px"></div>
+    <div class="balance">
+        
+        <div class="bal_two">
+            <p style="font-size: 33px;top:5px;left:60px;position: absolute;padding-bottom: 20px;font-family:Georgia, 'Times New Roman', Times, serif;color:white;"><i>BankForU</i></p>
+            <div class="two_cus ">
+                <form method="post" action="/BankForYou/Balance" class="bal_form">
+                    <p>ACCOUNT NO </p> :
+                    <div style="padding-left: 20px;" >
+                        <input type="text" name="acc_no">&nbsp;&nbsp;
+                        <button >Get</button>
+                    </div>
+                </form>
+        </div>
+         <div style="border: 1px solid black;margin:30px;padding: 20px;">
+            <br>
+            Account Number : <%=data.acc_no%><br><br>
+            Account Name &nbsp;&nbsp;&nbsp; : <%=data.acc_name%><br><br>
+           <b><pre>Balance         : Rs. <%=data.balance%></pre></b>
+         </div>   
+    </div>
+    <!-- <script src="script.js"></script> -->
+    <script src="balance.js"></script>
+</body>
+</html>

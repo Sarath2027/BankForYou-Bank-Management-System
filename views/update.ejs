@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="update.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="create_acc acc_sub">
+        <form class="cancel" method="get" action="/BankForYou/Manager"> <button style="height:40px;"><img src="arrow-left-long-solid.svg" height="30px" width="40px"></button></form>
+        <h1><div class="acc_body_head">Update Account</div></h1>
+        
+        <form method="post" action="/BankForYou/Managerupdatedone">
+            <div class="create_out">
+                <div class="create_1">
+                    <table>
+                        <tr class="r1">
+                            <td>Account Number </td><td style="font-size: 30px;">: <b><%=data.acc_no%></b></td>
+                            <input type="text" name="acc_no" value="<%=data.acc_no%>" style="display: none;">
+                            <td>Account Name <td>: <input type="text" name="acc_name" value="<%=data.acc_name%>"></td>
+                            <td>Created Date</td><td>: <%=data.created_date%></td>
+                            </tr>
+                        <tr class="r1">
+                            <td> S/o,D/o/W/o</td><td>: <input type="text" name="sdw" required value="<%=data.sodowo%>"></td>
+                            <td>Aadhar No.</td><td>: <input type="text" name="aadhar" required value="<%=data.aadhar%>"></td>
+                            <td>DOB </td><td>: <input type="date" name="dob" required value="<%=data.dob%>"></td>
+                        </tr>
+                        <tr class="r3">
+                            <td>Phone No. </td><td colspan="2">: <input type="text" name="phone" style="width: 45vh;" required value="<%=data.Phone%>"></td>
+                            <td >Email </td><td colspan="2">: <input type="text" name="email" style="width: 45vh;" required value="<%=data.email%>"></td></td>
+                        </tr>
+                        <tr class="r1">
+                            <td>Nominee Name</td><td colspan="2">: <input type="text" name="nominee_name" style="width: 45vh;" required value="<%=data.nominee_name%>"></td>
+                            <td >Nominee Phone No.</td><td colspan="2">: <input type="text" name="nominee_ph" style="width: 45vh;" required value="<%=data.nominee_ph%>"></td>
+        
+                        </tr>
+                        <tr class="r4">
+                            <td>Address</td> <td colspan="2">: <textarea name="address" rows="3" cols="15" style="width:45vh;font-size: 17px;height: 40px;" required ><%=data.address%></textarea></td>
+                            <td>Photo : </td><td colspan="2" rowspan="2"><img src="data:image/<%=data.img.contentType%>;base64,<%=data.img.data.toString('base64')%>" height="150px" width="120px"></td>
+                            </tr>
+                        <tr>
+                            <!-- <td>Changing Photo :</td><td><input type="file" name="image" required /></td> -->
+                        </tr>
+                    </table>
+                    </div>
+                <div class="create_2">
+                    <table>
+                        <tr>
+                            <td>Branch ID</td><td>: &nbsp;&nbsp;<input type="text" name="b_id" value="<%=bank.B_Id%>"></td>
+                        </tr>
+                        <tr>
+                            <td>Branch Name</td><td>: &nbsp;&nbsp; <%=bank.Branch_Name%></td>
+                        </tr>
+                        <tr>
+                            <td>Branch Phone No. </td><td>: &nbsp;&nbsp;<%=bank.Phone%></td>
+                        </tr>
+                        <tr>
+                            <td>Branch Email</td><td>: &nbsp;&nbsp;<%=bank.Email%></td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="final_div"><button class="final_apply">Update Changes</button></div>
+        </form>
+        
+    </div>
+</body>
+</html>

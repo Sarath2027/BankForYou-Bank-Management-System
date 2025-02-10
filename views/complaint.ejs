@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <p style="font-size: 33px;top:5px;left:60px;position: absolute;padding-bottom: 20px;font-family:Georgia, 'Times New Roman', Times, serif;color:white;"><i>BankForU</i></p>
+    
+    <div class="complaint">
+        <form method="get" action="/BankForYou/Home">
+            <button class="back_btn"><img src="arrow-left-long-solid.svg" height="30px" width="40px"></button>
+        </form>
+        <div class="complaint_head">Raise a complaint</div>
+        <div class="mode"><img src="cloud-moon-solid.svg" height="30px" width="30px"></div>
+        
+        <div class="complaint_details">
+            <form method="post" action="/BankForYou/Complaintadd">
+                <table>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="name" placeholder="Your Name"></td>
+                    </tr>
+                    <tr>
+                        <td>Branch ID</td>
+                        <td><input type="text" name="branch_id" placeholder="Your Branch ID"></td>
+                    </tr>
+                    <tr>
+                        <td>Role</td>
+                        <td><input type="text" name="role" placeholder="Your Role"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>complaint</td>
+                        <td><textarea rows="6" cols="20" name="complaint" placeholder="Your complaint"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Phone No.</td>
+                        <td><input type="text" name="ph_no" placeholder="Your Phone number"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" name="email" placeholder="Your Email"></td>
+                    </tr>
+                    <tr><td style="text-align: center;" colspan="2"><button style="padding: 10px;height: 33px;">Submit</button></td></tr>
+                </table>
+                
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

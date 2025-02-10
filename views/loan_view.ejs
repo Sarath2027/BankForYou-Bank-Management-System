@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .loan_view{
+            display: flex;
+            justify-content: center;
+            margin-top: 100px;
+            border: 1px solid black;
+            margin: 300px;
+            margin-top: 100px;
+            padding: 40px 50px 50px 50px;
+            align-items: center;
+        }
+        td{
+            padding: 10px;
+            font-size: 20px;
+        }
+        button{
+            height: 40px;
+            width: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="loan_view">
+        <table class="loan_table">
+            <tr>
+                <td colspan="2" style="text-align: center;font-size: 35px;padding-bottom: 30px;"><b>Loan Details</b></td>
+            </tr>
+            <tr>
+                <td>Account Number</td><td>: <b><%=data.acc_no%> </b> </td>
+            </tr>
+            <tr>
+                <td>Account Holder Name</td><td>: <%=data.acc_name%> </td>
+            </tr>
+            <tr>
+                <td>Occupation</td><td>: <%=data.occupation%> </td>
+            </tr>
+            <tr>
+                <td>Purpose</td><td>: <%=data.purpose%> </td>
+            </tr>
+            <tr>
+                <td>Amount</td><td>: <b>Rs. <%=data.amount%> </b></td>
+            </tr>
+            <tr>
+                <td>Interest Return Type</td><td>: <%=data.return_type%> </td>
+            </tr>
+            <tr>
+                <td style="text-align: center;" colspan="2">
+                    <form method="post" action="/BankForYou/managerclearloan">
+                        <input type="text" name="acc_no" value="<%=data.acc_no%>" style="display: none;">
+                        <button class="c_l_loan">Clear Loan</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

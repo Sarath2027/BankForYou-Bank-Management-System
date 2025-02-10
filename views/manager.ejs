@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="manager.css" rel="stylesheet" type="text/css">
+</head>
+<body>   
+    <div class="manager_head">
+        <form method="get" action="/BankForYou/Home">
+            <button class="back_btn"><img src="arrow-left-long-solid.svg" height="30px" width="40px"></button>
+        </form>
+       <div class="manager_title">Manager</div>
+       <div class="mode"><img src="cloud-moon-solid.svg" height="30px" width="30px"></div>
+    </div>
+    <div class="navbar">
+        <div class="elements">
+            <div class="navele acc_create">Account Creations</div>
+            <div class="navele loan_sanc">Loan</div>
+            <!-- <div class="navele complaint">Complaints</div> -->
+        </div>
+    </div>
+    <div class="body_acc_create_out">
+
+    
+    <div class="body_acc_create">
+        
+        <div>
+            <form method="post" action="/BankForYou/managerdate">
+                Date : <input type="date" name="date"> <button>check</button>
+            </form> <p>(OR)</p>
+            <form method="post" action="/BankForYou/managername">
+                Name : <input type="text" name="acc_name"> <button>Check</button>
+            </form>
+        </div>
+        
+        <div class="accounts_table">
+        <%if(val!=[]){%>
+            <%for(let v of val){%>
+            <table>
+                <col span="1" style="background-color:rgb(141, 141, 230);">
+                <col span="1" style="background-color:rgb(182, 182, 233);">
+                <col span="1" style="background-color:rgb(141, 141, 230);">
+                <col span="1" style="background-color:rgb(182, 182, 233);">
+                <col span="1" style="background-color:rgb(141, 141, 230);">
+                <col span="1" style="background-color:rgb(182, 182, 233);">
+                <tr>
+                    <td><b>Account No</b></td><td><%=v.acc_no%></td>
+                    <td><b>Account Holder Name</b></td><td><%=v.acc_name%></td>
+                    <td><b>Phone</b></td><td><%=v.Phone%></td>
+                    <td style="background-color:rgb(141, 141, 230);"><b>Email</b></td><td style="width:17%;background-color:rgb(182, 182, 233);"><%=v.email%></td>
+                    <td class="show" style="width:5%;"><b>^</b></td>
+                </tr>
+                <tr class="sec2 hide">
+                    <td><b>S/o,D/o,W/o</b></td><td><%=v.sodowo%></td>
+                    <td><b>Aadhar</b></td><td><%=v.aadhar%></td>
+                    <td><b>DOB</b></td><td><%=v.dob%></td>
+                    <td colspan="3" rowspan="3"><p style="text-align:left; padding:15px 0px 2px 20px"><b>Photo :</b></p><img src="data:image/<%=v.img.contentType%>;base64,<%=v.img.data.toString('base64')%>" height="100px" width="80px"></td>
+                </tr>
+                <tr class="sec3 hide">
+                    <td><b>Acc_Type</b></td><td><%=v.type%></td>
+                    <td><b>Balance</b></td><td><%=v.balance%></td>
+                    <td><b>B_ID</b></td><td><%=v.B_Id%></td>
+                </tr>
+                <tr class="sec4 hide">
+                    <td><b>Nominee Name</b></td><td><%=v.nominee_name%></td>
+                    <td><b>Nominee Phone No.</b></td><td><%=v.nominee_ph%></td>
+                    <td><b>Address</b></td><td><%=v.address%></td>
+                </tr>
+                <tr class="sec5 hide" style="background-color: beige;">
+                    <td colspan="9" class="buttons_d_u">
+                        <div>
+                            <form method="post" action="/BankForYou/managerupdate">
+                                <input class="hide" name="acc_no" type="text" value="<%=v.acc_no%>">
+                                <button class="update">Update</button>
+                            </form>
+                            <form method="post" action="/BankForYou/managerdelete">
+                                <input class="hide" name="acc_no" type="text" value="<%=v.acc_no%>">
+                                <button class="del">Delete</button>
+                            </form> 
+                        </div>
+                           
+                    </td>
+                </tr>
+            </table>
+            <%}%>
+        <%}%>
+        </div>
+        
+    </div>
+</div>
+    <div class="body_loan_sanc hide">
+        <div>
+            <form method="post" action="/BankForYou/managerloan">
+                Account Number : <input type="text" name="acc_no"> <button>Check</button>
+            </form>
+        </div>
+    </div>
+    <div class="body_complaint hide">
+        <table>
+            <tr></tr>
+        </table>
+    </div>
+    <script src="manager.js"></script>
+</body>
+</html>

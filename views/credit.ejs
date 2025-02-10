@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankForYou</title>
+    <link href="acc.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>CREIT</h1>
+    <div class="debit">
+            
+            <div class="div1">
+                <table class="table1">
+                    <tr>
+                        <td>Account No.</td><td>: <%=data.acc_no%></td>
+                    </tr>
+                    <tr>
+                        <td>Account Holder Name</td><td>: <%=data.acc_name%></td>
+                    </tr>
+                    <tr>
+                        <td>Mobile</td><td>: <%=data.Phone%></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td><td>: <%=data.email%></td>
+                    </tr>
+                    <tr>
+                        <td>Address</td><td>: <%=data.address%></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Account Type</td><td>: <%=data.type%></td>
+                    </tr>
+                    <tr>
+                        <td>Available Balance</td><td>: Rs. <%=data.balance%></td>
+                    </tr>
+                    <tr>
+                        <td>Branch ID</td><td>: <%=bank.B_Id%></td>
+                    </tr>
+                    <tr>
+                        <td>Branch Name</td><td>: <%=bank.Branch_Name%></td>
+                    </tr>
+                    <tr>
+                        <td>Branch Phone No.</td><td>: <%=bank.Phone%></td>
+                    </tr>
+                    <tr>
+                        <td>Branch Email</td><td>: <%=bank.Email%></td>
+                    </tr>
+                    <tr style="justify-content: center;">
+                        <td colspan="2" style="padding-left: 150px;padding-top: 30px;display: flex;column-gap:15px;justify-content:center;align-items: center;width: 100%;">
+                            <form method="get" action="/BankForYou/Accountant">
+                                <button>Cancel</button>
+                            </form>
+                            <button class="wake_up">Click To proceed</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="div2">
+                <div class="photo">
+                    <img src="data:image/<%=data.img.contentType%>;base64,<%=data.img.data.toString('base64')%>" height="150px" width="120px">
+                </div>
+            </div>
+        </div>
+        <div class="debit_on hide">
+            <form method="post" action="/BankForYou/Account/credit_on">
+                <input type="text" name="acc_no" value="<%=data.acc_no%>" style="display: none;">
+                <input type="text" name="acc_name" value="<%=data.acc_name%>" style="display: none;">
+                <table class="table2">
+                    <tr>
+                        <td>Amount </td><td>: <input type="text" name="credit_amount" required></td>
+                    </tr>
+                    <tr>
+                        <td>Date </td><td>: <input type="date" name="date" required></td>
+                    </tr>
+                    <tr>
+                        <td>Transaction Type </td><td>: <select class="trans_type" name="trans_type">
+                            <option value="Type" disabled selected>Type</option>
+                            <option value="cash">Cash</option>
+                            <option value="cheque">Cheque</option>
+                        </select></td>
+                    </tr>
+                    <tr style="justify-content: center;">
+                        <td colspan="2" style="padding-left: 150px;padding-top: 30px;display: flex;column-gap:15px;justify-content:center;align-items: center;width: 100%;">
+                                <button class="final_debit" disabled>Credit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>    
+        </div>
+    <script>
+        let wake_up=document.querySelector(".wake_up");
+        let debit_on=document.querySelector(".debit_on");
+        wake_up.addEventListener("click",()=>{
+            debit_on.classList.remove("hide");
+            window.scrollTo(0,document.body.scrollHeight);
+            wake_up.style.opacity="0.3"
+            wake_up.disabled=true;
+        });
+        let final_debit=document.querySelector(".final_debit");
+        let trans_type=document.querySelector("select");
+        trans_type.addEventListener("change",()=>{
+            if(trans_type.value==="cash" || trans_type.value==="cheque"){
+            final_debit.style.opacity="1";
+            final_debit.disabled=false;
+        }
+        });
+    </script>
+</body>
+</html>
